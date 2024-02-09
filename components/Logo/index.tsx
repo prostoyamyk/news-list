@@ -5,15 +5,12 @@ import Link from 'next/link';
 import { StyledLogo } from '@/components/StyledComponents';
 import LogoImage from '@/assets/logo.svg';
 
-const Logo = ({
-  width,
-  height,
-  isLink = true
-}: {
+type LogoProps = {
   width?: string;
   height?: string;
   isLink?: boolean;
-}) => {
+};
+const Logo = ({ width, height, isLink = true }: LogoProps) => {
   if (!isLink) {
     return (
       <StyledLogo $width={width} $height={height}>

@@ -7,6 +7,7 @@ import {
   NextSSRInMemoryCache,
   SSRMultipartLink
 } from '@apollo/experimental-nextjs-app-support/ssr';
+import { PropsWithChildren } from 'react';
 
 const url = process.env.MAIN_API;
 
@@ -29,6 +30,6 @@ const makeClient = () => {
   });
 };
 
-export function ApolloWrapper({ children }: React.PropsWithChildren) {
+export function ApolloWrapper({ children }: PropsWithChildren<{}>) {
   return <ApolloNextAppProvider makeClient={makeClient}>{children}</ApolloNextAppProvider>;
 }

@@ -2,6 +2,7 @@ import { ApolloWrapper } from '@/lib/Apollo/Apollo';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/StyledComponents/register';
 import { Onest } from 'next/font/google';
+import { PropsWithChildren } from 'react';
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +13,7 @@ const onest = Onest({
   subsets: ['latin', 'cyrillic'],
   display: 'swap'
 });
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
     <html lang='ru' className={onest.className}>
       <body>

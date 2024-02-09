@@ -6,8 +6,11 @@ import Link from 'next/link';
 const MEDIA_URL = 'https://i.simpalsmedia.com/point.md/news/370x194';
 const MEDIA_LOGO_URL = 'https://i.simpalsmedia.com/point.md/logo';
 
-const Article = ({ articleData }: { articleData: ArticleData }) => {
-  const sourceLogo: string | StaticImageData | undefined = articleData.parents.find(
+type ArticleProps = { articleData: ArticleData };
+type SourceLogo = string | StaticImageData | undefined;
+
+const Article = ({ articleData }: ArticleProps) => {
+  const sourceLogo: SourceLogo = articleData.parents.find(
     (parent: ArticleParents) => parent.type === 'source'
   )?.attachment;
 
